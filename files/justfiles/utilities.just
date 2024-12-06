@@ -25,28 +25,26 @@ bios:
 
 # Show all messages from this boot
 logs-this-boot:
-    #! /bin/run0 /bin/bash
-    journalctl -b 0
+    sudo journalctl -b 0
 
 # Show all messages from last boot
 logs-last-boot:
-    #! /bin/run0 /bin/bash
-    journalctl -b -1
+    sudo journalctl -b -1
 
 # Regenerate GRUB config, useful in dual-boot scenarios where a second operating system isn't listed
 regenerate-grub:
-    #! /bin/run0 /bin/bash
+    #!/usr/bin/bash
     if [ -d /sys/firmware/efi ]; then
-      grub2-mkconfig -o /etc/grub2-efi.cfg
+      sudo grub2-mkconfig -o /etc/grub2-efi.cfg
     else
-      grub2-mkconfig -o /etc/grub2.cfg
+      sudo grub2-mkconfig -o /etc/grub2.cfg
     fi
 
 # Enroll Nvidia driver & KMOD signing key for secure boot - Enter password "universalblue" if prompted
 enroll-secure-boot-key:
-    run0 mokutil --timeout -1
+    sudo mokutil --timeout -1
     echo 'The next line will prompt for a MOK password. Then, input "universalblue"'
-    run0 mokutil --import /etc/pki/akmods/certs/akmods-ublue.der
+    sudo mokutil --import /etc/pki/akmods/certs/akmods-ublue.der
     echo 'At next reboot, the mokutil UEFI menu UI will be displayed (*QWERTY* keyboard input and navigation).\nThen, select "Enroll MOK", and input "universalblue" as the password'
 
 # Toggle display of the user-motd in terminal

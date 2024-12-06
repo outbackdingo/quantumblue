@@ -17,7 +17,7 @@ setup() {
 }
 
 @test "Ensure ujust is configured correctly for tests" {
-    run ujust bios
+    run ujust logs-this-boot
     [ "$status" -eq 0 ]
 }
 

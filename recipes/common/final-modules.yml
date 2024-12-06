@@ -2,5 +2,4 @@ modules:
     - type: script
       scripts:
         - removeunusedrepos.sh
-        - removesuid.sh
         - regenerateinitramfs.sh
