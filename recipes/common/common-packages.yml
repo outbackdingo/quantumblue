@@ -9,4 +9,5 @@ install:
   - just
   - patch
   - p7zip
+  - zsh
   - unrar
