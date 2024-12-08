@@ -4,10 +4,10 @@
   </a>
 </p>
 
-<h1 align="center">secureblue</h1>
+<h1 align="center">quantumblue</h1>
 
 
-[![secureblue](https://github.com/outbackdingo/quantumblue/actions/workflows/build.yml/badge.svg)](https://github.com/outbackdingo/quantumblue/actions/workflows/build.yml)
+[![quantumblue](https://github.com/outbackdingo/quantumblue/actions/workflows/build.yml/badge.svg)](https://github.com/outbackdingo/quantumblue/actions/workflows/build.yml)
 [![trivy](https://github.com/outbackdingo/quantumblue/actions/workflows/trivy.yml/badge.svg)](https://github.com/outbackdingo/quantumblue/actions/workflows/trivy.yml)
 [![Discord](https://img.shields.io/discord/1202086019298500629?style=flat&logo=discord&logoColor=white&label=Discord&labelColor=%235F6AE9&color=%2333CB56)](https://discord.com/invite/qMTv5cKfbF)
 [![Donate](https://img.shields.io/badge/Donate-blue.svg)](DONATE.md)
@@ -16,19 +16,19 @@ This repo uses [BlueBuild](https://blue-build.org/) to generate hardened operati
 
 # Scope
 
-secureblue applies hardening with the following goals in mind:
+quantumblue applies hardening with the following goals in mind:
 
 - Increase defenses against the exploitation of both known and unknown vulnerabilities.
 - Avoid sacrificing usability for most use cases where possible.
 
 The following are not in scope:
 - Anything that sacrifices security for "privacy". Fedora is already sufficiently private and "privacy" often serves as a euphemism for security theater. This is especially true when at odds with improving security.
-- Anything related to "degoogling" chromium. For example, we will not be replacing [hardened-chromium](https://github.com/secureblue/hardened-chromium) with Brave or ungoogled-chromium. Both of them make changes that sacrifice security for "privacy", such as enabling MV2. <sup>[why?](https://developer.chrome.com/docs/extensions/develop/migrate/improve-security)</sup>
+- Anything related to "degoogling" chromium. For example, we will not be replacing [hardened-chromium](https://github.com/quantumblue/hardened-chromium) with Brave or ungoogled-chromium. Both of them make changes that sacrifice security for "privacy", such as enabling MV2. <sup>[why?](https://developer.chrome.com/docs/extensions/develop/migrate/improve-security)</sup>
 
 # Hardening
 
 - Installing and enabling [hardened_malloc](https://github.com/GrapheneOS/hardened_malloc) globally, including for flatpaks. <sup>[Thanks to rusty-snake's spec](https://github.com/rusty-snake/fedora-extras)</sup>
-- Installing [hardened-chromium](https://github.com/secureblue/hardened-chromium), which is inspired by [Vanadium](https://github.com/GrapheneOS/Vanadium). <sup>[Why chromium?](https://grapheneos.org/usage#web-browsing)</sup> <sup>[Why not flatpak chromium?](https://forum.vivaldi.net/post/669805)</sup>
+- Installing [hardened-chromium](https://github.com/quantumblue/hardened-chromium), which is inspired by [Vanadium](https://github.com/GrapheneOS/Vanadium). <sup>[Why chromium?](https://grapheneos.org/usage#web-browsing)</sup> <sup>[Why not flatpak chromium?](https://forum.vivaldi.net/post/669805)</sup>
 - Setting numerous hardened sysctl values <sup>[details](https://github.com/outbackdingo/quantumblue/blob/live/files/system/etc/sysctl.d/hardening.conf)</sup>
 - Remove SUID-root from [numerous binaries](https://github.com/outbackdingo/quantumblue/blob/live/files/scripts/removesuid.sh) and replace functionality [using capabilities](https://github.com/outbackdingo/quantumblue/blob/live/files/system/usr/bin/setcapsforunsuidbinaries)
 - Disable Xwayland by default (for GNOME, Plasma, and Sway images)
@@ -63,7 +63,7 @@ For more info on BlueBuild, check out the [BlueBuild homepage](https://blue-buil
 
 # Customization
 
-If you want to add your own customizations on top of secureblue, you are advised strongly against forking. Instead, create a repo for your own image by using the [BlueBuild template](https://github.com/blue-build/template), then change your `base-image` to a secureblue image. This will allow you to apply your customizations to secureblue in a concise and maintainable way, without the need to constantly sync with upstream.
+If you want to add your own customizations on top of quantumblue, you are advised strongly against forking. Instead, create a repo for your own image by using the [BlueBuild template](https://github.com/blue-build/template), then change your `base-image` to a quantumblue image. This will allow you to apply your customizations to quantumblue in a concise and maintainable way, without the need to constantly sync with upstream.
 
 # FAQ
 
@@ -79,18 +79,18 @@ Have a look at [PREINSTALL-README](PREINSTALL-README.md) before proceeding.
 
 ## Rebasing
 > [!NOTE]
-> If you don't already have a Fedora Atomic installation, use a Fedora Atomic ISO that matches your secureblue target image to install one. If you want to use a secureblue Silverblue image, start with the Fedora Silverblue ISO, Kinoite for Kinoite, Sericea (Sway Atomic) for Sericea and all the Wayblue images, and CoreOS for all the securecore images.
+> If you don't already have a Fedora Atomic installation, use a Fedora Atomic ISO that matches your quantumblue target image to install one. If you want to use a quantumblue Silverblue image, start with the Fedora Silverblue ISO, Kinoite for Kinoite, Sericea (Sway Atomic) for Sericea and all the Wayblue images, and CoreOS for all the securecore images.
 > 
 > For more details on the available images, have a look at [IMAGES](IMAGES.md) before proceeding.
 
 To rebase a [Fedora Atomic](https://fedoraproject.org/atomic-desktops/) or [Fedora CoreOS](https://fedoraproject.org/coreos/) installation, download the script below:
 
-[![Download](https://shields.io/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white)](https://github.com/outbackdingo/quantumblue/releases/latest/download/install_secureblue.sh)
+[![Download](https://shields.io/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white)](https://github.com/outbackdingo/quantumblue/releases/latest/download/install_quantumblue.sh)
 
 Then, run it from the directory you downloaded it to:
 
 ```
-bash install_secureblue.sh
+bash install_quantumblue.sh
 ```
 
 
