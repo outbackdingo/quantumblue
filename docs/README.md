@@ -1,14 +1,14 @@
 <p align="center">
-  <a href="https://github.com/secureblue/secureblue">
-    <img src="https://github.com/secureblue/secureblue/assets/129108030/292e0ecc-50b8-4de5-a11a-bfe292489f6c" href="https://github.com/secureblue/secureblue" width=180 />
+  <a href="https://github.com/outbackdingo/quantumblue">
+    <img src="https://github.com/outbackdingo/quantumblue/assets/129108030/292e0ecc-50b8-4de5-a11a-bfe292489f6c" href="https://github.com/outbackdingo/quantumblue" width=180 />
   </a>
 </p>
 
 <h1 align="center">secureblue</h1>
 
 
-[![secureblue](https://github.com/secureblue/secureblue/actions/workflows/build.yml/badge.svg)](https://github.com/secureblue/secureblue/actions/workflows/build.yml)
-[![trivy](https://github.com/secureblue/secureblue/actions/workflows/trivy.yml/badge.svg)](https://github.com/secureblue/secureblue/actions/workflows/trivy.yml)
+[![secureblue](https://github.com/outbackdingo/quantumblue/actions/workflows/build.yml/badge.svg)](https://github.com/outbackdingo/quantumblue/actions/workflows/build.yml)
+[![trivy](https://github.com/outbackdingo/quantumblue/actions/workflows/trivy.yml/badge.svg)](https://github.com/outbackdingo/quantumblue/actions/workflows/trivy.yml)
 [![Discord](https://img.shields.io/discord/1202086019298500629?style=flat&logo=discord&logoColor=white&label=Discord&labelColor=%235F6AE9&color=%2333CB56)](https://discord.com/invite/qMTv5cKfbF)
 [![Donate](https://img.shields.io/badge/Donate-blue.svg)](DONATE.md)
 
@@ -29,14 +29,14 @@ The following are not in scope:
 
 - Installing and enabling [hardened_malloc](https://github.com/GrapheneOS/hardened_malloc) globally, including for flatpaks. <sup>[Thanks to rusty-snake's spec](https://github.com/rusty-snake/fedora-extras)</sup>
 - Installing [hardened-chromium](https://github.com/secureblue/hardened-chromium), which is inspired by [Vanadium](https://github.com/GrapheneOS/Vanadium). <sup>[Why chromium?](https://grapheneos.org/usage#web-browsing)</sup> <sup>[Why not flatpak chromium?](https://forum.vivaldi.net/post/669805)</sup>
-- Setting numerous hardened sysctl values <sup>[details](https://github.com/secureblue/secureblue/blob/live/files/system/etc/sysctl.d/hardening.conf)</sup>
-- Remove SUID-root from [numerous binaries](https://github.com/secureblue/secureblue/blob/live/files/scripts/removesuid.sh) and replace functionality [using capabilities](https://github.com/secureblue/secureblue/blob/live/files/system/usr/bin/setcapsforunsuidbinaries)
+- Setting numerous hardened sysctl values <sup>[details](https://github.com/outbackdingo/quantumblue/blob/live/files/system/etc/sysctl.d/hardening.conf)</sup>
+- Remove SUID-root from [numerous binaries](https://github.com/outbackdingo/quantumblue/blob/live/files/scripts/removesuid.sh) and replace functionality [using capabilities](https://github.com/outbackdingo/quantumblue/blob/live/files/system/usr/bin/setcapsforunsuidbinaries)
 - Disable Xwayland by default (for GNOME, Plasma, and Sway images)
 - Mitigation of [LD_PRELOAD attacks](https://github.com/Aishou/wayland-keylogger) via `ujust toggle-bash-environment-lockdown`
 - Disabling coredumps
 - Disabling all ports and services for firewalld
 - Adds per-network MAC randomization
-- Blacklisting numerous unused kernel modules to reduce attack surface <sup>[details](https://github.com/secureblue/secureblue/blob/live/files/system/etc/modprobe.d/blacklist.conf)</sup>
+- Blacklisting numerous unused kernel modules to reduce attack surface <sup>[details](https://github.com/outbackdingo/quantumblue/blob/live/files/system/etc/modprobe.d/blacklist.conf)</sup>
 - Enabling only the [flathub-verified](https://flathub.org/apps/collection/verified/1) remote by default
 - Sets numerous hardening kernel arguments (Inspired by [Madaidan's Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html)) <sup>[details](KARGS.md)</sup>
 - Require wheel user authentication via polkit for `rpm-ostree install` <sup>[why?](https://github.com/rohanssrao/silverblue-privesc)
@@ -85,7 +85,7 @@ Have a look at [PREINSTALL-README](PREINSTALL-README.md) before proceeding.
 
 To rebase a [Fedora Atomic](https://fedoraproject.org/atomic-desktops/) or [Fedora CoreOS](https://fedoraproject.org/coreos/) installation, download the script below:
 
-[![Download](https://shields.io/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white)](https://github.com/secureblue/secureblue/releases/latest/download/install_secureblue.sh)
+[![Download](https://shields.io/badge/-Download-blue?style=for-the-badge&logo=download&logoColor=white)](https://github.com/outbackdingo/quantumblue/releases/latest/download/install_secureblue.sh)
 
 Then, run it from the directory you downloaded it to:
 
