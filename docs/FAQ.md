@@ -18,7 +18,8 @@ During rpm-ostree operations, it's normal. Outside of that, make sure you follow
 
 #### An app I use won't start due to a malloc issue. How do I fix it?
 
-Override `LD_PRELOAD` for that app. For flatpaks, this is as simple as removing the environment variable via Flatseal.
+- For flatpaks, remove the `LD_PRELOAD` environment variable via Flatseal. To re-enable hardened_malloc for the respective flatpak, replace the removed variable.
+- For layered packages and packages installed via brew, run the application with `ujust with-standard-malloc APP`. This starts the app without hardened_malloc only once, it does not disable hardened_malloc for the app persistently.
 
 #### On secureblue half of my CPU cores are gone. Why is this?
 
@@ -41,11 +42,9 @@ First check if the README already has an equivalent or better feature. If it doe
 
 #### How do I install Steam?
 
-To use Steam you can either:
-
-- Install the [flatpak](https://flathub.org/apps/com.valvesoftware.Steam)
-- Install Steam via the [bazzite-arch](https://github.com/ublue-os/bazzite-arch) distrobox
-- Layering Steam is not recommended
+```
+ujust install-steam
+```
 
 #### Why are bluetooth kernel modules disabled? How do I enable them?
 
