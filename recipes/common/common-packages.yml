@@ -14,3 +14,29 @@ install:
   - distrobox
   - toolbox
   - podman
+  - bash-completion
+  - bzip2
+  - file
+  - gcc
+  - gcc-c++
+  - git-core
+  - make
+  - ncurses-devel
+  - patch
+  - rsync
+  - tar
+  - unzip
+  - wget
+  - which
+  - diffutils
+  - python3
+  - perl-base
+  - perl-Data-Dumper
+  - perl-File-Compare
+  - perl-File-Copy
+  - perl-FindBin
+  - perl-IPC-Cmd
+  - perl-JSON-PP
+  - perl-lib
+  - perl-Thread-Queue
+  - perl-Time-Piece
